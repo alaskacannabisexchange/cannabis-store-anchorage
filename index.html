@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="google-site-verification" content="LEzwivKN2VEx9MPdgcq9dqF2gKwKwcNbLR433HMsU88" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Alaska Cannabis Exchange | Premium Anchorage Dispensary</title>
 <style>
+  :root {
+    --primary: #1a3e2f;
+    --accent: #8cb560;
+    --background: #f5faf6;
+    --text-dark: #223322;
+    --text-light: #fff;
+  }
   /* Base Reset */
   *, *::before, *::after {
     box-sizing: border-box;
@@ -12,8 +20,8 @@
   body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5faf6;
-    color: #223322;
+    background: var(--background);
+    color: var(--text-dark);
     line-height: 1.6;
     scroll-behavior: smooth;
   }
@@ -181,7 +189,7 @@
     display: block;
     width: 130px;
     height: 6px;
-    background: #62b06f;
+    background: var(--accent);
     margin: 1rem auto 0;
     border-radius: 6px;
   }
@@ -217,7 +225,7 @@
     height: 10px;
   }
   .product-carousel::-webkit-scrollbar-thumb {
-    background-color: #62b06f;
+    background-color: var(--accent);
     border-radius: 6px;
   }
   .product-card {
@@ -238,7 +246,7 @@
   .product-image {
     height: 180px;
     overflow: hidden;
-    border-bottom: 3px solid #62b06f;
+    border-bottom: 3px solid var(--accent);
   }
   .product-image img {
     width: 100%;
@@ -271,14 +279,14 @@
     padding: 0.7rem 1.6rem;
     border-radius: 34px;
     border: none;
-    background-color: #62b06f;
+    background-color: var(--accent);
     color: white;
     font-weight: 700;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 0.85rem;
     align-self: flex-start;
-    box-shadow: 0 6px 16px #62b06fbb;
+    box-shadow: 0 6px 16px #8cb560cc;
     transition: background-color 0.3s ease;
   }
   .inquire-btn:hover,
@@ -503,34 +511,151 @@
     border: none;
   }
 
-  /* Footer */
+  /* Footer - updated with your provided CSS */
   footer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 80px 0 30px;
+  }
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    padding: 0 1rem;
+  }
+  .footer-col {
+    flex: 1;
+    min-width: 200px;
+  }
+  .footer-col h3 {
+    color: white;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+  }
+  .footer-col h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+  .footer-links a {
+    color: var(--accent);
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+  }
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: black;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  .social-links a:hover {
+    background-color:  #ffd700;;
+    transform: translateY(-3px);
+    color:  #ffd700;;
+  }
+  .copyright {
     text-align: center;
-    padding: 2rem 1rem;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--accent);
     font-size: 0.9rem;
-    font-weight: 600;
-    color: #7aad89;
-    user-select: none;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
-  /* Responsive nav hamburger */
-  @media (max-width: 800px) {
+  /* Responsive */
+  @media (max-width: 900px) {
     nav ul {
-      display: none;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-    .hamburger {
-      display: block;
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .hero-text {
+      margin-bottom: 2rem;
+    }
+    .product-carousel {
+      padding-left: 0.5rem;
+    }
+    section.gallery, section.about, section.testimonials, section.contact {
+      margin: 3rem 1rem;
+      padding: 2rem 1.5rem;
+    }
+    .footer-container {
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 1rem;
+    }
+    .footer-links a {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 600px) {
+    .masonry {
+      column-count: 1;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
     }
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display&display=swap" rel="stylesheet" />
 <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <header>
+  
   <div class="container nav-wrapper">
-    <div class="logo" tabindex="0" aria-label="Alaska Cannabis Exchange logo">Alaska <span>Cannabis</span> Exchange</div>
+        <a href="#home" class="logo-link" aria-label="Alaska Cannabis Exchange - Home">
+  <img
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzVGTanppmh6ezuuligWt9thnEc6YpkstivUOkQbmNss9EtWZRypB0jKhC6Cfb3Rd406XPwLUB1WBQ3TtFe-jfrUOfwFFpDNuRdhODFjl1k1CuwsgakjwcG4OloqUAkTJ5NseLK1-kyEmbkFfRhL3W_nYMQp5QtV5jE4RDeLStEQatGWSktlozaUHMKI_v/s500/LOGO-ACE-Blue1.png"
+    alt="Alaska Cannabis Exchange"
+    class="logo-img"
+    loading="lazy"
+    width="56"
+    height="56"
+  />
+</a>
+    <div class="logo" tabindex="0" aria-label="Alaska Cannabis Exchange logo">Alaska <span>Cannabis</span> Exchange
+    </div>
     <nav aria-label="Primary navigation">
+        
       <ul>
         <li><a href="#home" class="active" aria-current="page">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -552,7 +677,7 @@
     <h1>Discover Anchorage’s Premier Cannabis Exchange</h1>
     <p>Quality cannabis products and expert service dedicated to our community since 2016. Explore curated selections designed to elevate your experience.</p>
     <div class="hero-buttons">
-     
+      <a href="#products" class="btn-primary" role="button">Explore Products</a>
       <a href="https://www.google.com/search?q=Alaska+Cannabis+Exchange+Reviews" target="_blank" rel="noopener" class="btn-secondary" role="button">Read Our Reviews</a>
     </div>
   </div>
@@ -575,12 +700,11 @@
   <div class="product-carousel" tabindex="0" aria-roledescription="carousel">
     <article class="product-card" role="group" aria-label="Concentrates">
       <div class="product-image">
-        <img src="https://media.istockphoto.com/id/2227617378/photo/female-lab-worker-taking-cannabis-plant-specimens-for-scientific-and-medicinal-analysis.jpg?s=612x612&w=0&k=20&c=TFkyPzW54HaN6dAevkl2JwZsed01GSd--oL4hueuzq4="Concentrates flower" loading="lazy" />
+        <img src="https://media.istockphoto.com/id/2227617378/photo/female-lab-worker-taking-cannabis-plant-specimens-for-scientific-and-medicinal-analysis.jpg?s=612x612&w=0&k=20&c=TFkyPzW54HaN6dAevkl2JwZsed01GSd--oL4hueuzq4=" alt="Concentrates flower" loading="lazy" />
       </div>
       <div class="product-info">
         <h3>Concentrates</h3>
         <p>Highly potent extracts with rich flavors, designed for the seasoned cannabis enthusiast.</p>
-    
       </div>
     </article>
     <article class="product-card" role="group" aria-label="Edibles">
@@ -590,7 +714,6 @@
       <div class="product-info">
         <h3>Edibles</h3>
         <p>Delicious chocolates, gummies, and more with accurate dosing for a perfect experience.</p>
-      
       </div>
     </article>
     <article class="product-card" role="group" aria-label="CBD Products">
@@ -600,7 +723,6 @@
       <div class="product-info">
         <h3>CBD Products</h3>
         <p>Therapeutic CBD offerings delivering wellness without psychoactive effects.</p>
-        
       </div>
     </article>
   </div>
@@ -619,7 +741,7 @@
 <section id="gallery" aria-label="Product and store image gallery" class="container">
   <h2>Gallery</h2>
   <div class="masonry" aria-live="polite">
-    <img src="https://media.istockphoto.com/id/1257858937/photo/cbd-oil-cannabis-oil-on-yellow-background.jpg?s=612x612&w=0&k=20&c=kTzLXxV2cvx1ZHyNjRqPmJMiP8KwqrwaKYU_sHNX68E="Cannabis concentrates at Alaska Cannabis Exchange" />
+    <img src="https://media.istockphoto.com/id/1257858937/photo/cbd-oil-cannabis-oil-on-yellow-background.jpg?s=612x612&w=0&k=20&c=kTzLXxV2cvx1ZHyNjRqPmJMiP8KwqrwaKYU_sHNX68E=" alt="Cannabis concentrates at Alaska Cannabis Exchange" />
     <img src="https://media.istockphoto.com/id/1337554042/photo/shot-of-a-healthy-cannabis-plant.jpg?s=612x612&w=0&k=20&c=JiRVoWZg1akaOQA1HxX-FGwySi_TS7e4_cHuJxsxxos=" alt="Assorted cannabis edibles" />
     <img src="https://media.istockphoto.com/id/1447281628/photo/the-process-of-choosing-and-buying-cannabis.jpg?s=612x612&w=0&k=20&c=3H2eOfb93uhyXkjpNBYREB5pn0W9Val14M1OE1f8El4=" alt="Premium cannabis flowers" />
   </div>
@@ -634,7 +756,7 @@
     <div class="stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
   </div>
   <div class="testimonial" role="article" aria-live="polite">
-    <p>Excellent service from  Chris b and store is amazing best spot 👌 …</p>
+    <p>Excellent service from Chris b and store is amazing best spot 👌 …</p>
     <div class="author">— Romina M Smith</div>
     <div class="stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
   </div>
@@ -659,8 +781,7 @@
     <p><strong>Phone:</strong> (907) 301-4208</p>
     <p><strong>Address:</strong> 2906 Spenard Rd, Anchorage, AK 99503, United States</p>
     <p><strong>Business Hours:</strong> Mon to Sat:  09am - 10pm</p>
-    
-  <p> Sunday 12pm to 8pm</p>
+    <p> Sunday 12pm to 8pm</p>
   </div>
   <div class="map-wrapper" aria-hidden="true">
     <iframe 
@@ -673,7 +794,48 @@
 </section>
 
 <footer>
-  &copy; 2025 Alaska Cannabis Exchange. For adults 21+ only.
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Alaska Cannabis Exchange</h3>
+      <p>Anchorage's premier destination for high-quality cannabis products and expert guidance. Serving the community with integrity since 2016.</p>
+     
+    </div>
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+     
+        <li><a href="#home" class="active" aria-current="page">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Products</h3>
+      <ul class="footer-links">
+        <li><a href="#products">Concentrates</a></li>
+        <li><a href="#products">Edibles</a></li>
+        <li><a href="#products">Topicals</a></li>
+        <li><a href="#products">CBD</a></li>
+        <li><a href="#products">Apparel</a></li>
+        <li><a href="#products">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>Reach Out to Us</h3>
+      <ul class="footer-links">
+        <li><a href="#">2906 Spenard Rd, Anchorage, AK 99503, United States</a></li>
+        <li><a href="#">(907) 301-4208</a></li>
+        
+        
+      </ul>
+    </div>
+  </div>
+  <div class="copyright">
+    &copy; 2025 Alaska Cannabis Exchange. For adults 21+ only.
+  </div>
 </footer>
 
 <script>
@@ -727,19 +889,4 @@
 
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
-      showTestimonial(parseInt(dot.dataset.index));
-    });
-    dot.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        showTestimonial(parseInt(dot.dataset.index));
-      }
-    });
-  });
-
-  setInterval(() => {
-    showTestimonial((current + 1) % testimonials.length);
-  }, 8000);
-</script>
-</body>
-</html>
+      showTestimonial(parseInt(dot.dataset
