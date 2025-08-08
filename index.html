@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Alaska Cannabis Exchange | Premium Anchorage Dispensary</title>
+<style>
+  /* Base Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5faf6;
+    color: #223322;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #2e8b57;
+    text-decoration: none;
+    transition: color 0.25s ease;
+  }
+  a:hover, a:focus {
+    color: #1b5932;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  /* Header */
+  header {
+    background: white;
+    box-shadow: 0 2px 10px rgb(34 68 34 / 0.12);
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+  }
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 1rem;
+  }
+  .logo {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: #2e8b57;
+    letter-spacing: 0.06em;
+  }
+  .logo span {
+    color: #62b06f;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 8px 0;
+    border-bottom: 3px solid transparent;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    border-color: #62b06f;
+    color: #62b06f;
+    outline-offset: 2px;
+  }
+
+  /* Hamburger for mobile */
+  .hamburger {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #2e8b57;
+  }
+
+  /* Hero Section */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+    padding: 3rem 1rem;
+    gap: 3rem;
+    align-items: center;
+  }
+  .hero-text {
+    max-width: 600px;
+  }
+  .hero-text h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2e8b57;
+  }
+  .hero-text p {
+    font-size: 1.2rem;
+    color: #4a6b4a;
+    margin-bottom: 2rem;
+  }
+  .hero-buttons a {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    margin-right: 1rem;
+    border-radius: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .btn-primary {
+    background-color: #2e8b57;
+    color: white;
+    box-shadow: 0 8px 18px #62b06fcc;
+  }
+  .btn-primary:hover, .btn-primary:focus {
+    background-color: #1b5932;
+    box-shadow: 0 12px 28px #1b593299;
+    outline: none;
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 2.5px solid #2e8b57;
+    color: #2e8b57;
+  }
+  .btn-secondary:hover, .btn-secondary:focus {
+    background-color: #62b06f;
+    color: white;
+    outline: none;
+  }
+  .hero-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgb(46 139 87 / 0.3);
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 7 / 5;
+  }
+
+  /* About Section */
+  #about {
+    background: white;
+    padding: 5rem 1rem 6rem;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgb(40 86 40 / 0.12);
+    margin: 4rem auto;
+    max-width: 1000px;
+  }
+  #about h2 {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #2e8b57;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+  }
+  #about h2::after {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 6px;
+    background: #62b06f;
+    margin: 1rem auto 0;
+    border-radius: 6px;
+  }
+  #about p {
+    max-width: 750px;
+    margin: 0 auto 1.6rem;
+    font-size: 1.1rem;
+    color: #405840;
+    line-height: 1.7;
+  }
+
+  /* Products Section */
+  #products {
+    margin: 6rem 0;
+  }
+  #products h2 {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #2e8b57;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .product-carousel {
+    display: flex;
+    gap: 1.6rem;
+    overflow-x: auto;
+    scroll-padding-left: 1rem;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+  }
+  .product-carousel::-webkit-scrollbar {
+    height: 10px;
+  }
+  .product-carousel::-webkit-scrollbar-thumb {
+    background-color: #62b06f;
+    border-radius: 6px;
+  }
+  .product-card {
+    background: white;
+    min-width: 280px;
+    border-radius: 18px;
+    box-shadow: 0 0 22px rgb(98 176 111 / 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover,
+  .product-card:focus-within {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgb(40 120 40 / 0.35);
+  }
+  .product-image {
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 3px solid #62b06f;
+  }
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .product-card:hover .product-image img {
+    transform: scale(1.1);
+  }
+  .product-info {
+    padding: 1.4rem 1.4rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-info h3 {
+    font-family: 'Georgia', serif;
+    color: #2e8b57;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+  .product-info p {
+    color: #4f6a45;
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  .inquire-btn {
+    margin-top: 1.6rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 34px;
+    border: none;
+    background-color: #62b06f;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    align-self: flex-start;
+    box-shadow: 0 6px 16px #62b06fbb;
+    transition: background-color 0.3s ease;
+  }
+  .inquire-btn:hover,
+  .inquire-btn:focus {
+    background-color: #3c7e40;
+    outline: none;
+  }
+
+  /* Video Section */
+  #video {
+    max-width: 900px;
+    margin: 5rem auto 6rem;
+    text-align: center;
+  }
+  #video h2 {
+    font-family: 'Georgia', serif;
+    color: #2e8b57;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+  }
+  #video p {
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+    color: #4f6a45;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgb(98 176 111 / 0.3);
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Gallery Section */
+  #gallery {
+    margin: 6rem auto 6rem;
+    max-width: 1100px;
+  }
+  #gallery h2 {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: #2e8b57;
+    margin-bottom: 2.2rem;
+    text-align: center;
+  }
+  .masonry {
+    column-count: 3;
+    column-gap: 1rem;
+  }
+  .masonry img {
+    width: 100%;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 6px 18px rgb(40 80 30 / 0.15);
+    cursor: zoom-in;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border-radius: 12px;
+  }
+  .masonry img:hover,
+  .masonry img:focus {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgb(40 80 30 / 0.3);
+    outline: none;
+  }
+  @media (max-width: 900px) {
+    .masonry {
+      column-count: 2;
+    }
+  }
+  @media (max-width: 600px) {
+    .masonry {
+      column-count: 1;
+    }
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .hero-text {
+      margin-bottom: 2rem;
+    }
+  }
+
+  /* Testimonials Section */
+  #testimonials {
+    background: #e2f1e8;
+    border-radius: 20px;
+    max-width: 910px;
+    margin: 6rem auto 6rem;
+    padding: 4rem 2rem 3rem;
+    box-shadow: 0 10px 30px rgb(46 139 87 / 0.2);
+    font-style: italic;
+    color: #3f6f3e;
+    position: relative;
+  }
+  #testimonials h2 {
+    font-family: 'Georgia', serif;
+    color: #2e8b57;
+    font-weight: 700;
+    font-size: 2.3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .testimonial {
+    display: none;
+    max-width: 680px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    position: relative;
+  }
+  .testimonial.active {
+    display: block;
+  }
+  .testimonial p {
+    font-size: 1.15rem;
+    position: relative;
+    padding: 0 1rem;
+  }
+  .testimonial p::before,
+  .testimonial p::after {
+    content: '"';
+    font-family: serif;
+    font-size: 3rem;
+    color: #7aad89cc;
+    position: absolute;
+    font-weight: 700;
+  }
+  .testimonial p::before {
+    top: -15px;
+    left: -22px;
+  }
+  .testimonial p::after {
+    bottom: -15px;
+    right: -22px;
+  }
+  .author {
+    margin-top: 1.2rem;
+    font-weight: 700;
+    font-style: normal;
+    text-align: right;
+    font-size: 1.05rem;
+    color: #2e8b57;
+  }
+  .stars {
+    color: #4a8b4a;
+    text-align: right;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+  }
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+  .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #87bb88;
+    cursor: pointer;
+    box-shadow: 0 0 7px #62b06faa;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .dot.active {
+    background: #2e8b57;
+    transform: scale(1.3);
+    box-shadow: 0 0 20px #2e8b57cc;
+  }
+
+  /* Contact Section */
+  #contact {
+    max-width: 900px;
+    margin: 6rem auto 4rem;
+    background: white;
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    box-shadow: 0 20px 48px rgb(46 139 87 / 0.25);
+    color: #375d38;
+  }
+  #contact h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.6rem;
+    margin-bottom: 1.6rem;
+    text-align: center;
+    color: #2e8b57;
+  }
+  #contact p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .contact-details {
+    font-size: 1.1rem;
+    max-width: 450px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+  }
+  .contact-details strong {
+    color: #4a8b4a;
+  }
+  .map-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 14px 38px rgb(46 139 87 / 0.3);
+    height: 320px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #7aad89;
+    user-select: none;
+  }
+
+  /* Responsive nav hamburger */
+  @media (max-width: 800px) {
+    nav ul {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+</style>
+<script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo" tabindex="0" aria-label="Alaska Cannabis Exchange logo">Alaska <span>Cannabis</span> Exchange</div>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#home" class="active" aria-current="page">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home" role="banner" aria-label="Anchorage's Premium Cannabis Dispensary">
+  <div class="hero-text">
+    <h1>Discover Anchorage’s Premier Cannabis Exchange</h1>
+    <p>Quality cannabis products and expert service dedicated to our community since 2016. Explore curated selections designed to elevate your experience.</p>
+    <div class="hero-buttons">
+     
+      <a href="https://www.google.com/search?q=Alaska+Cannabis+Exchange+Reviews" target="_blank" rel="noopener" class="btn-secondary" role="button">Read Our Reviews</a>
+    </div>
+  </div>
+  <div class="hero-image" aria-hidden="true">
+    <img src="https://media.istockphoto.com/id/1172961154/photo/glass-bottles-with-cbd-oil-thc-tincture-and-hemp-leaves-on-a-marble-background-flat-lay.jpg?s=612x612&w=0&k=20&c=BvuLicIiRvG_FfOQ4jCJkiY4B8BcRCNuHkA5N-2b4iM=" alt="" loading="lazy" />
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" tabindex="-1" aria-labelledby="about-title" class="container">
+  <h2 id="about-title">About Our Dispensary</h2>
+  <p>Alaska Cannabis Exchange is your trusted Anchorage destination for premium-quality cannabis. Situated at 2906 Spenard Rd, we foster a welcoming environment for both newcomers and aficionados.</p>
+  <p>Our passionate budtenders offer personalized education to help you select products tailored to wellness, relaxation, or enjoyment.</p>
+  <p>We rigorously curate our assortment, featuring top-tier flowers, edibles, concentrates, and accessories sourced from Alaska’s finest producers.</p>
+</section>
+
+<!-- Products -->
+<section id="products" tabindex="-1" aria-label="Our Premium Products" class="container">
+  <h2>Our Premium Products</h2>
+  <div class="product-carousel" tabindex="0" aria-roledescription="carousel">
+    <article class="product-card" role="group" aria-label="Concentrates">
+      <div class="product-image">
+        <img src="https://media.istockphoto.com/id/2227617378/photo/female-lab-worker-taking-cannabis-plant-specimens-for-scientific-and-medicinal-analysis.jpg?s=612x612&w=0&k=20&c=TFkyPzW54HaN6dAevkl2JwZsed01GSd--oL4hueuzq4="Concentrates flower" loading="lazy" />
+      </div>
+      <div class="product-info">
+        <h3>Concentrates</h3>
+        <p>Highly potent extracts with rich flavors, designed for the seasoned cannabis enthusiast.</p>
+    
+      </div>
+    </article>
+    <article class="product-card" role="group" aria-label="Edibles">
+      <div class="product-image">
+        <img src="https://media.istockphoto.com/id/1271218024/photo/cannabis-joints-and-brownies-for-medicinal-use.jpg?s=612x612&w=0&k=20&c=lhnlCyPQJMO-ySCKq5bBklDdj3ORTXOAzNcfs3DktQ4=" alt="Edible cannabis products" loading="lazy" />
+      </div>
+      <div class="product-info">
+        <h3>Edibles</h3>
+        <p>Delicious chocolates, gummies, and more with accurate dosing for a perfect experience.</p>
+      
+      </div>
+    </article>
+    <article class="product-card" role="group" aria-label="CBD Products">
+      <div class="product-image">
+        <img src="https://media.istockphoto.com/id/1257858937/photo/cbd-oil-cannabis-oil-on-yellow-background.jpg?s=612x612&w=0&k=20&c=kTzLXxV2cvx1ZHyNjRqPmJMiP8KwqrwaKYU_sHNX68E=" alt="CBD products" loading="lazy" />
+      </div>
+      <div class="product-info">
+        <h3>CBD Products</h3>
+        <p>Therapeutic CBD offerings delivering wellness without psychoactive effects.</p>
+        
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Video -->
+<section id="video" aria-label="Store video tour">
+  <h2>See Our Dispensary in Action</h2>
+  <p>Watch a short tour that showcases our welcoming space, premium products, and customer care.</p>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/drvITwtVUy0" title="Alaska Cannabis Exchange store tour video" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" aria-label="Product and store image gallery" class="container">
+  <h2>Gallery</h2>
+  <div class="masonry" aria-live="polite">
+    <img src="https://media.istockphoto.com/id/1257858937/photo/cbd-oil-cannabis-oil-on-yellow-background.jpg?s=612x612&w=0&k=20&c=kTzLXxV2cvx1ZHyNjRqPmJMiP8KwqrwaKYU_sHNX68E="Cannabis concentrates at Alaska Cannabis Exchange" />
+    <img src="https://media.istockphoto.com/id/1337554042/photo/shot-of-a-healthy-cannabis-plant.jpg?s=612x612&w=0&k=20&c=JiRVoWZg1akaOQA1HxX-FGwySi_TS7e4_cHuJxsxxos=" alt="Assorted cannabis edibles" />
+    <img src="https://media.istockphoto.com/id/1447281628/photo/the-process-of-choosing-and-buying-cannabis.jpg?s=612x612&w=0&k=20&c=3H2eOfb93uhyXkjpNBYREB5pn0W9Val14M1OE1f8El4=" alt="Premium cannabis flowers" />
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" tabindex="-1" aria-label="Customer testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial active" role="article" aria-live="polite">
+    <p>Lovely layout!  The shop is very open with its display of products!  They have some of the best prices on in-house flower, and the staff is very knowledgeable!</p>
+    <div class="author">— nancy krebs</div>
+    <div class="stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  </div>
+  <div class="testimonial" role="article" aria-live="polite">
+    <p>Excellent service from  Chris b and store is amazing best spot 👌 …</p>
+    <div class="author">— Romina M Smith</div>
+    <div class="stars" aria-label="Five star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+  </div>
+  <div class="testimonial" role="article" aria-live="polite">
+    <p>Amazing service! Extremely Friendly with great vibes!!</p>
+    <div class="author">— Connor Warren.</div>
+    <div class="stars" aria-label="Four and a half star rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+  </div>
+  <div class="dots" role="tablist" aria-label="Testimonial navigation">
+    <button class="dot active" role="tab" aria-selected="true" aria-controls="testimonial1" aria-label="Show testimonial 1" data-index="0"></button>
+    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial2" aria-label="Show testimonial 2" data-index="1"></button>
+    <button class="dot" role="tab" aria-selected="false" aria-controls="testimonial3" aria-label="Show testimonial 3" data-index="2"></button>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" tabindex="-1" aria-label="Contact Alaska Cannabis Exchange" class="container">
+  <h2>Contact Us</h2>
+  <p>Have questions or want to visit us? Reach out or stop by our Anchorage location anytime.</p>
+  <div class="contact-details" role="contentinfo">
+    <p><strong>Email:</strong> retail@cannabisace.com</p>
+    <p><strong>Phone:</strong> (907) 301-4208</p>
+    <p><strong>Address:</strong> 2906 Spenard Rd, Anchorage, AK 99503, United States</p>
+    <p><strong>Business Hours:</strong> Mon to Sat:  09am - 10pm</p>
+    
+  <p> Sunday 12pm to 8pm</p>
+  </div>
+  <div class="map-wrapper" aria-hidden="true">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1922.509676528969!2d-149.90585439999998!3d61.1934441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x56c897c23e8953af%3A0xa07bb8b23a1ad3e8!2sAlaska%20Cannabis%20Exchange!5e0!3m2!1sen!2s!4v1753974073984!5m2!1sen!2s" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade" 
+      title="Alaska Cannabis Exchange Location Map">
+    </iframe>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Alaska Cannabis Exchange. For adults 21+ only.
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav ul');
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+    if(nav.style.display === 'flex') {
+      nav.style.display = 'none';
+      hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.background = '#f5faf6';
+      nav.style.position = 'absolute';
+      nav.style.top = '60px';
+      nav.style.right = '1rem';
+      nav.style.borderRadius = '12px';
+      nav.style.boxShadow = '0 4px 18px rgb(46 139 87 / 0.2)';
+      hamburger.innerHTML = '<i class="fas fa-times"></i>';
+    }
+  });
+
+  // Close nav on link click (mobile)
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 800){
+        nav.style.display = 'none';
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Testimonials slider logic
+  const testimonials = document.querySelectorAll('#testimonials .testimonial');
+  const dots = document.querySelectorAll('#testimonials .dot');
+  let current = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((test, i) => {
+      test.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+      dots[i].setAttribute('aria-selected', i === index ? 'true' : 'false');
+      dots[i].tabIndex = i === index ? 0 : -1;
+    });
+    current = index;
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      showTestimonial(parseInt(dot.dataset.index));
+    });
+    dot.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        showTestimonial(parseInt(dot.dataset.index));
+      }
+    });
+  });
+
+  setInterval(() => {
+    showTestimonial((current + 1) % testimonials.length);
+  }, 8000);
+</script>
+</body>
+</html>
